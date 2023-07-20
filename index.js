@@ -1,5 +1,5 @@
 const express = require('express');
-
+const ejs = require('ejs');
 const app= express();
 
 const homeRouter=require('./routes/home');
@@ -7,7 +7,7 @@ const errorRouter=require('./routes/error');
 const customerRouter=require('./routes/customer');
 const authRouter=require('./routes/auth');
 const adminRouter=require('./routes/admin');
-
+app.set('view engine','ejs');
 app.use(homeRouter);
 app.use(adminRouter);
 app.use(customerRouter);
